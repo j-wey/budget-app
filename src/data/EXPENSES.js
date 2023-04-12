@@ -4,28 +4,28 @@ export const EXPENSES = [
         date: '03/28/2023',
         amount: 34.20,
         vendor: 'USPS',
-        category: 'Gifts',
+        category: 'Discretionary',
         account: 'Venture Card'
     },
     {
         date: '03/29/2023',
         amount: 5.60,
         vendor: 'TacoBell',
-        category: 'Eating Out',
+        category: 'Food',
         account: 'Venture Card'
     },
     {
         date: '03/29/2023',
         amount: 11.00,
         vendor: 'Mountain beer',
-        category: 'Eating Out',
+        category: 'Food',
         account: 'Venture Card'
     },
     {
         date: '03/31/2023',
         amount: 5.00,
         vendor: 'car wash',
-        category: 'Auto',
+        category: 'Discretionary',
         account: 'Venture Card'
     },
     {

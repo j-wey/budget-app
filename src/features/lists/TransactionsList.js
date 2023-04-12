@@ -1,9 +1,10 @@
+import { useSelector } from 'react-redux'
 import { Card, CardHeader, CardTitle, CardBody, Table } from 'reactstrap'
-import { selectAllExpenses } from '../components/expensesSlice'
-import ExpenseItem from '../components/ExpenseItem'
+import { selectAllExpenses } from '../transactions/expenses/expensesSlice'
+import ExpenseItem from './ExpenseItem'
 
-const ExpensesList = () => {
-    const expenses = selectAllExpenses()
+const TransactionsList = () => {
+    const expenses = useSelector(selectAllExpenses)
     console.log(expenses)
     
   return (
@@ -23,8 +24,8 @@ const ExpensesList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                {expenses.map((expense) => {
-                    return <ExpenseItem expense={expense} />
+                {expenses.map((expense, idx) => {
+                    return <ExpenseItem key={idx} expense={expense} />
                 })}
                 </tbody>
             </Table>
@@ -33,4 +34,4 @@ const ExpensesList = () => {
     )
 }
 
-export default ExpensesList
+export default TransactionsList

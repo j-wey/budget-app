@@ -1,4 +1,4 @@
-import React from 'react'
+import { formatDate } from "../../utils/formatDate"
 
 const ExpenseItem = ({ expense }) => {
     const { date, amount, vendor, category, account } = expense
@@ -6,7 +6,7 @@ const ExpenseItem = ({ expense }) => {
   return (
     <>
         <tr>
-            <td>{date}</td>
+            <td>{formatDate(date)}</td>
             <td>{amount}</td>
             <td>{vendor}</td>
             <td>{category}</td>
