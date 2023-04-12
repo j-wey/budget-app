@@ -1,16 +1,16 @@
-import TransactionInput from './features/TransactionInput';
-import logo from './logo.svg';
-import './App.css';
-import { Container } from 'reactstrap';
-import ExpensesList from './features/ExpensesList';
+import TransactionAccordion from './features/transactions/TransactionAccordion'
+import logo from './logo.svg'
+import './App.css'
+import { Container } from 'reactstrap'
+import TransactionsList from './features/transactions/TransactionsList'
 
 function App() {
   return (
     <Container>
-      <TransactionInput />
-      <ExpensesList />
+      <TransactionAccordion />
+      <TransactionsList />
     </Container>
-  );
+  )
 }
 
-export default App;
+export default App
