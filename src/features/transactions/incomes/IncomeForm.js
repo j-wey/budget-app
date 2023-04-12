@@ -1,9 +1,20 @@
+import { useDispatch } from 'react-redux'
 import { Formik, Form, Field } from 'formik'
 import { Row, Col, Button, CardBody } from 'reactstrap'
+import { addIncome } from './incomesSlice'
 
 const IncomeForm = () => {
+    const dispatch = useDispatch()
     const handleSubmit = (values) => {
-
+        const income = {
+            account: values.account,
+            amount: values.amount,
+            category: values.category,
+            date: values.date,
+            transType: values.transType,
+            source: values.source
+        }
+        dispatch(addIncome(income))
     }
     
     return (

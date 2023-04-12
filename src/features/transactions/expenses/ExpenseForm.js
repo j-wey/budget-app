@@ -15,7 +15,6 @@ const ExpenseForm = () => {
             vendor: values.vendor
         }
         dispatch(addExpense(expense))
-
     }
 
     return (

@@ -2,7 +2,7 @@ import TransactionAccordion from './features/transactions/TransactionAccordion'
 import logo from './logo.svg'
 import './App.css'
 import { Container } from 'reactstrap'
-import TransactionsList from './features/lists/TransactionsList'
+import TransactionsList from './features/transactions/TransactionsList'
 
 function App() {
   return (

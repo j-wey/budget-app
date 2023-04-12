@@ -2,22 +2,22 @@ export const INCOMES = [
     {
         date: '03/05/2023',
         amount: 20.00,
-        source: 'Venmo',
-        category: 'Discretionary',
-        account: 'Venture Card'
+        source: 'work',
+        category: 'Payroll',
+        account: 'Checking'
     },
     {
-        date: '03/29/2023',
+        date: '04/09/2023',
         amount: 5.60,
-        vendor: 'TacoBell',
-        category: 'Food',
-        account: 'Venture Card'
+        source: 'Venmo',
+        category: 'Reimbursement',
+        account: 'Checking'
     },
     {
-        date: '03/29/2023',
-        amount: 11.00,
-        vendor: 'Mountain beer',
-        category: 'Food',
-        account: 'Venture Card'
+        date: '04/10/2023',
+        amount: 1100.00,
+        source: 'work',
+        category: 'Bonus',
+        account: 'Checking'
     }
 ]
