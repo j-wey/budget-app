@@ -1,0 +1,54 @@
+{
+    "expenses": [
+        {
+            "account": "Checking",
+            "amount": 72.59,
+            "category": "Utilities",
+            "date": "2023-04-14",
+            "transType": "expense",
+            "vendor": "Cell phone"
+        },
+        {
+            "account": "Venture Card",
+            "amount": 169.00,
+            "category": "Parking/Gas",
+            "date": "2023-04-14",
+            "transType": "expense",
+            "vendor": "parking"
+        },
+        {
+            "account": "Venture Card",
+            "amount": 5.54,
+            "category": "Food",
+            "date": "2023-04-10",
+            "transType": "expense",
+            "vendor": "Starbucks"
+        }
+    ],
+    "incomes": [
+        {
+            "account": "Checking",
+            "amount": 3678.37,
+            "category": "Payroll",
+            "date": "2023-04-14",
+            "source": "Employer",
+            "transType": "income"
+        },
+        {
+            "account": "Venmo",
+            "amount": 20,
+            "category": "Reimbursement",
+            "date": "2023-04-05",
+            "source": "Groceries",
+            "transType": "income"
+        },
+        {
+            "account": "Checking",
+            "amount": 95,
+            "category": "Other",
+            "date": "2023-03-14",
+            "source": "cash back",
+            "transType": "income"
+        }
+    ]
+}

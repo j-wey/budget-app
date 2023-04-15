@@ -1,0 +1,62 @@
+body {
+    background-color: #1e1e1e;
+}
+
+.dash-card {
+    background-color: #2e2e2e;
+    border-color: #FFEDC9;
+    color: #FFEDC9
+}
+.dash-card-head {
+    border-color: #FFEDC9;
+}
+
+.form-control {
+    background-color: #2e2e2e;
+    color: #FFEDC9;
+    border-color: #FFEDC9
+}
+.form-control::placeholder {
+    color: #FFEDC9;
+}
+.form-control:focus {
+    background-color: #2e2e2e;
+    color: #FFEDC9;
+    border-color: #FFEDC9;
+}
+
+.exp-btn {
+    color: rgba(255,142,142,50);
+    border-color: rgba(255,142,142,50);
+}
+.inc-btn {
+    color: rgba(148,255,146,50);
+    border-color: rgba(148,255,146,50);
+}
+
+.trans-sub-btn {
+    background-color: #2e2e2e;
+    color: #FFEDC9;
+    border-color: #FFEDC9;
+}
+
+.exp-list-head {
+    color: rgba(255,198,198,50);
+}
+.exp-list {
+    --bs-table-striped-bg: rgba(255,198,198,50);
+    --bs-table-striped-color: #2e2e2e;
+    border-bottom: 1px solid rgba(255,142,142,50);
+    color: rgba(255,198,198,50);
+}
+
+.inc-list-head {
+    color: rgba(225,255,224,50);
+    border-bottom: 1px solid #FFEDC9;
+}
+.inc-list {
+    --bs-table-striped-bg: rgba(225,255,224,50);
+    --bs-table-striped-color: #2e2e2e;
+    border-bottom: 1px solid rgba(148,255,146,50);
+    color: rgba(225,255,224,50);
+}
