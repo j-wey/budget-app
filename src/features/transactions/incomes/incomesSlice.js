@@ -1,8 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { INCOMES } from '../../../data/INCOMES'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { baseUrl } from "../../../app/baseUrl";
+
+export const fetchIncomes = createAsyncThunk(
+    'incomes/fetchIncomes',
+    async () => {
+        const response = await fetch(baseUrl + 'incomes')
+        if(!response.ok) {
+            return Promise.reject('Unable to fetch data, status: ' + response.status)
+        }
+        const data = await response.json()
+        return data
+    }
+)
 
 const initialState = {
-    incomesArray: INCOMES
+    incomesArray: [],
+    isLoading: true,
+    errMsg: ''
 }
 
 const incomesSlice = createSlice({
@@ -17,6 +31,19 @@ const incomesSlice = createSlice({
                 ...action.payload
             }
             state.incomesArray.push(newIncome)
+        }
+    },
+    extraReducers: {
+        [fetchIncomes.pending]: (state) => {
+            state.isLoading = true
+        },
+        [fetchIncomes.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.errMsg = ''
+            state.incomesArray = action.payload
+        },
+        [fetchIncomes.rejected]: (state, action) => {
+            state.errMsg = action.error ? action.error.message : 'Fetch failed'
         }
     }
 })

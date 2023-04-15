@@ -1,8 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { EXPENSES } from '../../../data/EXPENSES'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { baseUrl } from "../../../app/baseUrl";
+// import { EXPENSES } from '../../../data/EXPENSES'
+
+export const fetchExpenses = createAsyncThunk(
+    'expenses/fetchExpenses',
+    async () => {
+        const response = await fetch(baseUrl + 'expenses')
+        if (!response.ok) {
+            return Promise.reject('Unable to fetch expense data, status: ' + response.status)
+        }
+        const data = await response.json()
+        return data
+    }
+)
 
 const initialState = {
-    expensesArray: EXPENSES
+    expensesArray: [],
+    isLoading: true,
+    errMsg: ''
 }
 
 const expensesSlice = createSlice({
@@ -17,6 +32,20 @@ const expensesSlice = createSlice({
                 ...action.payload
             }
             state.expensesArray.push(newExpense)
+        }
+    },
+    extraReducers: {
+        [fetchExpenses.pending]: (state) => {
+            state.isLoading = true
+        },
+        [fetchExpenses.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.errMsg = ''
+            state.expensesArray = action.payload
+        },
+        [fetchExpenses.rejected]: (state, action) => {
+            state.isLoading = false
+            state.errMsg = action.error ? action.error.message : 'Data fetch failed'
         }
     }
 })

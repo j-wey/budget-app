@@ -6,20 +6,21 @@ import IncomeItem from './incomes/IncomeItem'
 import { selectAllIncomes } from './incomes/incomesSlice'
 
 const TransactionsList = () => {
-    const expenses = useSelector(selectAllExpenses)
-    const incomes = useSelector(selectAllIncomes)
+    const expenses = useSelector((state) => selectAllExpenses(state))
+    const incomes = useSelector((state) => selectAllIncomes(state))
 
     return (
         <Card
-            className='my-3'
+            className='my-3 dash-card'
         >
-            <CardHeader>
+            <CardHeader className='dash-card-head'>
                 <CardTitle className='text-center'>Monthly Transactions</CardTitle>
             </CardHeader>
             <CardBody>
                 <Table responsive striped>
-                    <thead>
-                        <tr><strong>Expenses</strong></tr>
+                    <hr />
+                    <thead className='exp-list-head'>
+                        <tr className='list-title'><strong>Expenses</strong></tr>
                         <tr>
                             <th>Date</th>
                             <th>Amount</th>
@@ -28,13 +29,14 @@ const TransactionsList = () => {
                             <th>Account</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='exp-list'>
                         {expenses.map((expense, idx) => {
                             return <ExpenseItem key={idx} expense={expense} />
                         })}
                     </tbody>
-                    <thead>
-                        <tr><strong>Incomes</strong></tr>
+                    <hr />
+                    <thead className='inc-list-head'>
+                        <tr className='list-title'><strong>Incomes</strong></tr>
                         <tr>
                             <th>Date</th>
                             <th>Amount</th>
@@ -43,7 +45,7 @@ const TransactionsList = () => {
                             <th>Account</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='inc-list'>
                         {incomes.map((income, idx) => {
                             return <IncomeItem key={idx} income={income} />
                         })}

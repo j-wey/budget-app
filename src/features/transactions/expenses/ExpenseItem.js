@@ -7,7 +7,7 @@ const ExpenseItem = ({ expense }) => {
     <>
         <tr>
             <td>{formatDate(date)}</td>
-            <td>{amount}</td>
+            <td>${amount}</td>
             <td>{vendor}</td>
             <td>{category}</td>
             <td>{account}</td>

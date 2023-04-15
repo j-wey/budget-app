@@ -1,13 +1,25 @@
 import { useState, useEffect } from 'react'
 import { Card, CardHeader, CardTitle, CardBody, Container, Row, Col, Button, ButtonGroup } from 'reactstrap'
+import { useSpring, animated } from 'react-spring'
 import TransactionForm from './TransactionForm'
+import ExpenseForm from './expenses/ExpenseForm'
+import IncomeForm from './incomes/IncomeForm'
 
 const TransactionInput = () => {
-    const [transType, setTransType] = useState('')
-    
+    const [transType, setTransType] = useState(null)
+
+    let content = null
+    if (transType === 'expense') {
+        content = <ExpenseForm />
+    } else if (transType === 'income') {
+        content = <IncomeForm />
+    } else {
+        content = null
+    }
+
     return (
-        <Card>
-            <CardHeader>
+        <Card className='my-3 dash-card trans-input'>
+            <CardHeader className='dash-card-head'>
                 <Row className='align-items-center'>
                     <Col>
                         New Transaction
@@ -15,7 +27,7 @@ const TransactionInput = () => {
                     <Col>
                         <ButtonGroup xs='4'>
                             <Button
-                                color="danger"
+                                className='exp-btn'
                                 outline
                                 onClick={() => setTransType('expense')}
                                 active={transType === 'expense'}
@@ -23,7 +35,7 @@ const TransactionInput = () => {
                                 -
                             </Button>
                             <Button
-                                color="success"
+                                className='inc-btn'
                                 outline
                                 onClick={() => setTransType('income')}
                                 active={transType === 'income'}
@@ -34,7 +46,7 @@ const TransactionInput = () => {
                     </Col>
                 </Row>
             </CardHeader>
-            <TransactionForm type={transType} />
+                {content}
         </Card>
 
     )
