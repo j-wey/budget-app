@@ -1,54 +1,107 @@
 {
-    "expenses": [
-        {
-            "account": "Checking",
-            "amount": 72.59,
-            "category": "Utilities",
-            "date": "2023-04-14",
-            "transType": "expense",
-            "vendor": "Cell phone"
-        },
-        {
-            "account": "Venture Card",
-            "amount": 169.00,
-            "category": "Parking/Gas",
-            "date": "2023-04-14",
-            "transType": "expense",
-            "vendor": "parking"
-        },
-        {
-            "account": "Venture Card",
-            "amount": 5.54,
-            "category": "Food",
-            "date": "2023-04-10",
-            "transType": "expense",
-            "vendor": "Starbucks"
-        }
-    ],
-    "incomes": [
-        {
-            "account": "Checking",
-            "amount": 3678.37,
-            "category": "Payroll",
-            "date": "2023-04-14",
-            "source": "Employer",
-            "transType": "income"
-        },
-        {
-            "account": "Venmo",
-            "amount": 20,
-            "category": "Reimbursement",
-            "date": "2023-04-05",
-            "source": "Groceries",
-            "transType": "income"
-        },
-        {
-            "account": "Checking",
-            "amount": 95,
-            "category": "Other",
-            "date": "2023-03-14",
-            "source": "cash back",
-            "transType": "income"
-        }
-    ]
+  "expenses": [
+    {
+      "id": 0,
+      "account": "Checking",
+      "amount": 72.59,
+      "category": "Utilities",
+      "date": "2023-04-14",
+      "transType": "expense",
+      "vendor": "Cell phone"
+    },
+    {
+      "id": 1,
+      "account": "Venture Card",
+      "amount": 169,
+      "category": "Parking/Gas",
+      "date": "2023-04-14",
+      "transType": "expense",
+      "vendor": "parking"
+    },
+    {
+      "id": 2,
+      "account": "Venture Card",
+      "amount": 5.54,
+      "category": "Food",
+      "date": "2023-04-10",
+      "transType": "expense",
+      "vendor": "Starbucks"
+    },
+    {
+      "account": "AmEx Card",
+      "amount": 100,
+      "category": "Food",
+      "date": "2023-04-12",
+      "transType": "expense",
+      "vendor": "AutoParts",
+      "id": 3
+    },
+    {
+      "account": "AmEx Card",
+      "amount": 100,
+      "category": "Food",
+      "date": "2023-04-12",
+      "transType": "expense",
+      "vendor": "Safeway",
+      "id": 4
+    }
+  ],
+  "incomes": [
+    {
+      "id": 0,
+      "account": "Checking",
+      "amount": 3678.37,
+      "category": "Payroll",
+      "date": "2023-04-14",
+      "source": "Employer",
+      "transType": "income"
+    },
+    {
+      "id": 1,
+      "account": "Venmo",
+      "amount": 20,
+      "category": "Reimbursement",
+      "date": "2023-04-05",
+      "source": "Groceries",
+      "transType": "income"
+    },
+    {
+      "id": 2,
+      "account": "Checking",
+      "amount": 95,
+      "category": "Other",
+      "date": "2023-03-14",
+      "source": "cash back",
+      "transType": "income"
+    }
+  ],
+  "transfers": [
+    {
+      "id": 0,
+      "type": "transfer",
+      "date": "2023-03-05",
+      "from_account": "Checking",
+      "to_account": "Venture",
+      "category": "card payment",
+      "amount": 2102.35
+  },
+  {
+      "id": 1,
+      "type": "transfer",
+      "date": "2023-04-09",
+      "from_account": "Checking",
+      "to_account": "Savings",
+      "category": "savings in",
+      "amount": 500.00
+  },
+  {
+      "id": 2,
+      "type": "transfer",
+      "date": "2023-04-10",
+      "from_account": "Savings",
+      "to_account": "Checking",
+      "category": "savings out",
+      "amount": 1100.00
+  }
+  ]
 }

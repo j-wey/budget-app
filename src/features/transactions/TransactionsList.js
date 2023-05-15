@@ -11,7 +11,7 @@ const TransactionsList = () => {
 
     return (
         <Card
-            className='my-3 dash-card'
+            className='dash-card'
         >
             <CardHeader className='dash-card-head'>
                 <CardTitle className='text-center'>Monthly Transactions</CardTitle>
