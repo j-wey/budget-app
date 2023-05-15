@@ -18,7 +18,7 @@ const TransactionInput = () => {
     }
 
     return (
-        <Card className='my-3 dash-card trans-input'>
+        <Card className='dash-card trans-input'>
             <CardHeader className='dash-card-head'>
                 <Row className='align-items-center'>
                     <Col>

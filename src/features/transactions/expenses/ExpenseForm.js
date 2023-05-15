@@ -1,7 +1,7 @@
 import { Formik, Form, Field } from 'formik'
 import { useDispatch } from 'react-redux'
 import { Row, Col, Button, CardBody } from 'reactstrap'
-import { addExpense } from './expensesSlice'
+import { postExpense } from './expensesSlice'
 
 const ExpenseForm = () => {
     const dispatch = useDispatch()
@@ -14,7 +14,7 @@ const ExpenseForm = () => {
             transType: values.transType,
             vendor: values.vendor
         }
-        dispatch(addExpense(expense))
+        dispatch(postExpense(expense))
     }
 
     return (

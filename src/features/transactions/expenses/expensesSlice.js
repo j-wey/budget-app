@@ -14,6 +14,22 @@ export const fetchExpenses = createAsyncThunk(
     }
 )
 
+export const postExpense = createAsyncThunk(
+    'expenses/postExpense',
+    async (expense, { dispatch }) => {
+        const response = await fetch(baseUrl + 'expenses', {
+            method: 'POST',
+            body: JSON.stringify(expense),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        if (!response.ok) {
+            return Promise.reject(response.status)
+        }
+        const data = await response.json()
+        dispatch(addExpense(data))
+    }
+)
+
 const initialState = {
     expensesArray: [],
     isLoading: true,
@@ -46,6 +62,11 @@ const expensesSlice = createSlice({
         [fetchExpenses.rejected]: (state, action) => {
             state.isLoading = false
             state.errMsg = action.error ? action.error.message : 'Data fetch failed'
+        },
+        [postExpense.rejected]: (state, action) => {
+            alert('Transaction could not be posted\nError: ' +
+                (action.error ? action.error.message : 'Fetch failed')
+            )
         }
     }
 })
